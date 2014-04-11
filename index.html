@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Jquery Validation - 台中前端社群</title>
+
+		<meta name="description" content="台中前端社群">
+		<meta name="author" content="HCY">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<link rel="stylesheet" href="css/mystyle.css">
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<!-- slides -->
+				<section>
+					<h1><i class="fa fa-bullhorn"></i> 台中前端社群</h1>
+					<h4>Taichung Frontend Group</h4>
+					<p>
+						<strong><a href="#">TALK #N</a></strong>
+					</p>
+				</section>
+				<section>
+					<h2>使用Jquery Validation</h2>
+					<h3>成為表單驗證的高手</h3>
+				</section>
+				<section>
+					<h2 style="letter-spacing:0.2em;"><i class="fa fa-user"></i>黃竹藝</h2>
+					<ul style="list-style-type: none;">
+						<li style="letter-spacing:0.2em"><i class="fa fa-arrow-right"></i> a.k.a Chuyi Huang</li>
+						<li style="letter-spacing:0.2em"><i class="fa fa-arrow-right"></i> ROR開發者</li>
+						<li style="letter-spacing:0.2em"><i class="fa fa-arrow-right"></i> 朝成為前端工程師的目標前進</li>
+					</ul>
+				</section>
+				<!-- main start -->
+				<section>
+					<h2>前端與後端的搭配</h2>
+					<img src="./images/front_back.jpg" alt="">
+					<li class="letter_2 fragment">前後端獨立</li>
+					<li class="letter_2 fragment">前後端同人</li>
+					<li class="letter_2 fragment">前後端同組</li>
+				</section>
+				<section>
+					<h3>表單是前台與後台的交接點 (後端)</h3>
+					<ul>
+						<li class="more_space fragment">送出欄位內容的值是否正確必須以後台為主</li>
+						<li class="more_space fragment">內容處理的結果必須以後台為主</li>
+						<li class="more_space fragment">如果有錯誤，錯誤訊息的內容以後台為主</li>
+					</ul>
+				</section>
+				<section>
+					<h3 class="more_space">表單是前台與後台的交接點 (前端)</h3>
+					<ul>
+						<li class="more_space fragment">表單的輸入界面與細節(label, input...)以前台為主</li>
+						<li class="more_space fragment">表單的外觀風格，欄位順序以前台為主</li>
+						<li class="more_space fragment red">提示與錯誤訊息顯示方式以前台設計為主</li>
+					</ul>
+				</section>
+				<section>
+					<h2>表單驗證到底是誰的工作?</h2>
+					<ul>
+						<li class="letter_2">
+							前端的立場:
+							<ul>
+								<li class="more_space fragment">是後端的工作，因為我不知道使用者會輸入什麼</li>
+								<li class="more_space fragment">是後端的工作，因為我不做跟伺服器溝通的工作</li>
+								<li class="more_space fragment">是後端的工作，因為表單的內容最後是送到後端</li>
+							</ul>
+						</li>
+						<li class="letter_2 fragment">
+							後端的想法:
+							<ul>
+								<li class="more_space fragment">前台要分擔，因為正確的提示可以減少表單輸入的錯誤</li>
+								<li class="more_space fragment">前台要分擔，因為錯誤訊息的顯示都沒有考量</li>
+								<li class="more_space fragment red">前台要分擔，因為在使用者送出表單前就可以做驗證</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2 style="letter-spacing:0.1em;">談談Jquery Validation</h2>
+					<ul>
+						<li class="more_space">搭配Jquery，歷史悠久</li>
+						<li class="more_space fragment">容易上手，內建許多檢查方法</li>
+						<li class="more_space fragment">驗證成功前不送出表單</li>
+						<li class="more_space fragment">可依照事件處理訊息</li>
+						<li class="more_space fragment">可自訂錯誤訊息</li>
+						<li class="more_space fragment">可自訂錯誤訊息樣式</li>
+						<li class="more_space fragment">可使用ajax驗證遠端邏輯</li>
+					</ul>
+				</section>
+				<section>
+					<h2>安裝方式</h2>
+					<ul class="lstn">
+						<li class="more_space">&lt;script src="/jquery.js">&lt;/script&gt; </li>
+						<li class="more_space">&lt;script src="/jquery.validate.min.js"&gt;&lt;/script&gt;</li>
+						<li class="more_space">&lt;-- 非必要 --&gt;</li>
+						<li class="more_space">&lt;script src="/jquery.additional_methods.js"&gt;&lt;/script&gt;</li>
+					</ul>
+				</section>
+				<section>
+					<h2>使用方式</h2>
+					<ul>
+						<li class="more_space">$("#form_id").validate();</li>
+						<li class="more_space fragment">使用rules定義欄位規則</li>
+						<li class="more_space fragment">使用messages客制錯誤訊息</li>
+						<li class="more_space fragment">可設定debug模式，無需送出表單</li>
+						<li class="more_space fragment">有callback可在驗證後處理特殊功能</li>
+						<li class="more_space fragment">使用errorElement, errorClass, validClass, errorContainer與wrapper設定錯誤樣式，用showErrors設定主要訊息</li>
+					</ul>
+				</section>
+				<section>
+					<h2>使用方式</h2>
+					<img src="./images/rules.png" alt="">
+					<div>在送出Submit前會檢查，如果有錯誤便會停止送出表單</div>
+				</section>
+				<section>
+					<h2>驗證規則</h2>
+					<ul>
+						<li class="more_space">required: 是否必填</li>
+						<li class="more_space fragment">url: 驗證網址格式正確性</li>
+						<li class="more_space fragment">number: 是否數字</li>
+						<li class="more_space fragment">email: 是否Email格式</li>
+						<li class="more_space fragment">minlegnth: 最短長度</li>
+						<li class="more_space fragment">maxlength: 最長長度</li>
+						<li class="more_space fragment">rangelength: 長度範圍</li>
+						<li class="more_space fragment">remote: 使用ajax驗證遠端</li>
+						<li class="more_space fragment">equalTo: 比較兩欄位</li>
+						<li class="more_space fragment">require_from_group method： 多選一必填</li>
+						<li class="more_space fragment">外掛additional-methods驗證US電話,郵遞區號</li>
+					</ul>
+				</section>
+				<section>
+					<h2>遠端驗證</h2>
+					<ul>
+						<li class="more_space">輸入資料是否存在</li>
+						<li class="more_space fragment">需要驗證使用者權限</li>
+						<li class="more_space fragment">需要比對資料庫內容</li>
+					</ul>
+				</section>
+				<section>
+					<h2>錯誤訊息 - 預設錯誤訊息</h2>
+					<!-- 預設錯誤訊息 -->
+					<img src="./images/default_msg.png" alt="">
+					<h4>直接在原始檔內修改</h4>
+				</section>
+				<section>
+					<h2>錯誤訊息 - 客制錯誤訊息</h2>
+					<img src="./images/custom_msg.png" alt="">
+				</section>
+				<section>
+					<h2>事件處理</h2>
+					<h4>啟動與取消特定事件</h4>
+					<img src="./images/onkeyup.png" alt="" style="width:450px;" class="fragment">
+					<h4 class="fragment">另外支持onkeyup, onfocusout, onclick, onsubmit等事件</h4>
+				</section>
+				<section>
+					<h2>Callback</h2>
+					<ul>
+						<li class="more_space">submitHandler: 按下submit時客制處理特定事件</li>
+						<li class="more_space">invalidHandler: 錯誤發生時的處理機制</li>
+						<li class="more_space">success: 單欄位驗證成功時的處理</li>
+						<li class="more_space">highlight: 單欄位驗證錯誤時的處置，e.g加入class</li>
+						<li class="more_space">unhighlight: highlight的反向操作</li>
+						<li class="more_space">showErrors: 整體表單任一欄位發生事件時顯示</li>
+						<li class="more_space">errorPlacement: 錯誤訊息擺放位置</li>
+					</ul>
+				</section>
+				<section>
+					<h2>客制驗證</h2>
+					<ul>
+						<li class="more_space">可參考additional-methods裡面的寫法</li>
+						<li class="more_space fragment">特殊輸入值的處理，例如郵遞區號，統編身份證等計算</li>
+						<li class="more_space fragment">搭配正規表示式Regexp做驗證</li>
+						<li class="more_space fragment">返回true才算驗證過，反之跳出錯誤</li>
+					</ul>
+					<img src="./images/custom_method.png" alt="" class="fragment">
+				</section>
+				<section>
+					<h2>錯誤樣式</h2>
+					<ul>
+						<li class="more_space">errorLabelContainer: </li>
+						<li class="more_space">errorElement: 錯誤訊息的顯示標籤</li>
+						<li class="more_space">errorClass: 錯誤訊息的class</li>
+						<li class="more_space">validClass: 驗證過時的class</li>
+						<li class="more_space">errorContainer: 錯誤訊息包住在某特定selector中</li>
+						<li class="more_space">wrapper: 包住errorElement的標籤</li>
+					</ul>
+				</section>
+				<section>
+					<h2>注意事項</h2>
+					<ul>
+						<li class="more_space red">*注意: 欄位的"name"屬性是必要的</li>
+						<li class="more_space">避免重複id</li>
+						<li class="more_space">更多驗證: https://github.com/jzaefferer/jquery-validation/tree/master/src/additional</li>
+					</ul>
+				</section>
+				<section>
+					<h2>其他form表驗證工具</h2>
+					<ul>
+						<li class="more_space">Happy.js</li>
+						<li class="more_space">Parsleyjs</li>
+						<li class="more_space">Jquery Form Validator</li>
+						<li class="more_space">很多...</li>
+					</ul>
+				</section>
+				<section>
+					<h3>囧rz 不會寫javascript，能夠做表單驗證嗎?</h3>
+					<img src="./images/frustrated.jpg" alt="">
+				</section>
+				<section>
+					<h2>使用HTML5的input新屬性</h2>
+					<ul>
+						<li class="more_space">&lt;input type="<span class="red">email</span>" name="email"&gt;</li>
+						<li class="more_space">&lt;input type="<span class="red">number</span>" name="quantity"&gt;</li>
+						<li class="more_space">&lt;input type="<span class="red">search</span>" name="googlesearch"&gt;</li>
+						<li class="more_space">&lt;input type="<span class="red">url</span>" name="homepage"&gt;</li>
+						<li class="more_space">&lt;input type="<span class="red">time</span>" name="enrolltime"&gt;</li>
+						<li class="more_space fragment">range, month, tel, color, week, datetime...</li>
+						<li class="more_space fragment">required, step, min, max與pattern屬性</li>
+					</ul>
+				</section>
+				<section>
+					<h2>顯示方式 以Chrome為例</h2>
+					<img src="./images/html5inputs.png" alt="" style="width:400px;">
+				</section>
+				<section>
+					<h2>瀏覽器支援度</h2>
+					<h4><a href="http://caniuse.com/">請多利用Can I use網站</a></h4>
+					<img src="./images/caniuse.png" alt="">
+				</section>
+				<!-- main end -->
+				<section>
+					<h2>參考資料</h2>
+					<ul>
+						<li class="more_space"><a href="http://caniuse.com/">請多利用Can I use網站</a></li>
+						<li class="more_space"><a href="http://www.dotblogs.com.tw/wadehuang36/archive/2010/08/22/17353.aspx?fid=56353">jQuery plugin Validation的7個Callback介紹</a></li>
+						<li class="more_space"><a href="http://jqueryvalidation.org/">jQuery Validation Plugin</a></li>
+						<li class="more_space"><a href="http://stackoverflow.com/questions/1863448/jquery-validation-on-success">jQuery Validation on Success</a></li>
+						<li class="more_space"><a href="http://inspire.twgg.org/programming/jquery/item/134-jquery-validate-detailed-instructions.html">jQuery Validate 詳細使用說明</a></li>
+						<li class="more_space"><a href="http://www.dotblogs.com.tw/marcus116/archive/2012/03/10/70637.aspx">[jQuery] jQuery.Vaildation 驗證元件</a></li>
+						<li class="more_space"><a href="http://www.w3schools.com/html/html5_form_input_types.asp">HTML5 Input Types</a></li>
+						<li class="more_space"><a href="http://www.w3schools.com/html/html5_form_attributes.asp">HTML5 New Form Attributes</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Thank You</h1>
+					<img src="./images/clap.jpg" alt="" class="fragment" style="width:40%">
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
