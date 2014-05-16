@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Jquery Validation - 台中前端社群</title>
+		<title>Sass - Syntactically Awesome Style Sheets - 台中前端社群</title>
 
 		<meta name="description" content="台中前端社群">
 		<meta name="author" content="HCY">
@@ -13,12 +13,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
 
 		<link rel="stylesheet" href="css/mystyle.css">
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+		<link rel="stylesheet" href="./css/font-awesome.min.css">
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -40,12 +40,13 @@
 					<h1><i class="fa fa-bullhorn"></i> 台中前端社群</h1>
 					<h4>Taichung Frontend Group</h4>
 					<p>
-						<strong><a href="#">TALK #N</a></strong>
+						<strong><a href="#">TALK #4</a></strong>
 					</p>
 				</section>
 				<section>
-					<h2>使用Jquery Validation</h2>
-					<h3>成為表單驗證的高手</h3>
+					<img src="./images/sass_logo.png" alt="" style="border:none;">
+					<h2>Sass - Syntactically Awesome Style Sheets</h2>
+					<h3><i class="fa fa-bullhorn"></i>擁有超人般力量的CSS</h3>
 				</section>
 				<section>
 					<h2 style="letter-spacing:0.2em;"><i class="fa fa-user"></i>黃竹藝</h2>
@@ -57,213 +58,414 @@
 				</section>
 				<!-- main start -->
 				<section>
-					<h2>前端與後端的搭配</h2>
-					<img src="./images/front_back.jpg" alt="">
-					<li class="letter_2 fragment">前後端獨立</li>
-					<li class="letter_2 fragment">前後端同人</li>
-					<li class="letter_2 fragment">前後端同組</li>
-				</section>
-				<section>
-					<h3>表單是前台與後台的交接點 (後端)</h3>
-					<ul>
-						<li class="more_space fragment">送出欄位內容的值是否正確必須以後台為主</li>
-						<li class="more_space fragment">內容處理的結果必須以後台為主</li>
-						<li class="more_space fragment">如果有錯誤，錯誤訊息的內容以後台為主</li>
+					<h2>什麼是Sass?</h2>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>Sass的作者</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>Sass的歷史</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>Sass的哲學</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>Sass的影響</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>Sass的未來</li>
 					</ul>
 				</section>
 				<section>
-					<h3 class="more_space">表單是前台與後台的交接點 (前端)</h3>
-					<ul>
-						<li class="more_space fragment">表單的輸入界面與細節(label, input...)以前台為主</li>
-						<li class="more_space fragment">表單的外觀風格，欄位順序以前台為主</li>
-						<li class="more_space fragment red">提示與錯誤訊息顯示方式以前台設計為主</li>
+					<h2>什麼是Sass?</h2>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i><del>Sass的作者</del></li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i><del>Sass的歷史</del></li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i><del>Sass的哲學</del></li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i><del>Sass的影響</del></li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i><del>Sass的未來</del></li>
 					</ul>
+					<h4 class="more_space">因為時間的關係以上通通跳過</h4>
 				</section>
 				<section>
-					<h2>表單驗證到底是誰的工作?</h2>
-					<ul>
-						<li class="letter_2">
-							前端的立場:
-							<ul>
-								<li class="more_space fragment">是後端的工作，因為我不知道使用者會輸入什麼</li>
-								<li class="more_space fragment">是後端的工作，因為我不做跟伺服器溝通的工作</li>
-								<li class="more_space fragment">是後端的工作，因為表單的內容最後是送到後端</li>
-							</ul>
-						</li>
-						<li class="letter_2 fragment">
-							後端的想法:
-							<ul>
-								<li class="more_space fragment">前台要分擔，因為正確的提示可以減少表單輸入的錯誤</li>
-								<li class="more_space fragment">前台要分擔，因為錯誤訊息的顯示都沒有考量</li>
-								<li class="more_space fragment red">前台要分擔，因為在使用者送出表單前就可以做驗證</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h2 style="letter-spacing:0.1em;">談談Jquery Validation</h2>
-					<ul>
-						<li class="more_space">搭配Jquery，歷史悠久</li>
-						<li class="more_space fragment">容易上手，內建許多檢查方法</li>
-						<li class="more_space fragment">驗證成功前不送出表單</li>
-						<li class="more_space fragment">可依照事件處理訊息</li>
-						<li class="more_space fragment">可自訂錯誤訊息</li>
-						<li class="more_space fragment">可自訂錯誤訊息樣式</li>
-						<li class="more_space fragment">可使用ajax驗證遠端邏輯</li>
-					</ul>
+					<h2>Sass是CSS的預處理器</h2>
+					<img src="./images/compiler.png" alt="">
+					<p class="red fragment">瀏覽器並不認識Sass!</p>
 				</section>
 				<section>
 					<h2>安裝方式</h2>
+					<ol>
+						<li class="letter" style="width:200%">在命令列執行: gem install sass</li>
+						<li class="letter" style="width:200%">使用codekit, compass.app等桌機軟體</li>
+						<li class="letter" style="width:200%">執行: sass input.sass output.css</li>
+						<li class="letter" style="width:200%">在瀏覽器上使用"output.css"</li>
+					</ol>
+					<p class="mt20">參考官方網站: <a href="http://sass-lang.com/install" target="_blank">http://sass-lang.com/install</a></p>
+				</section>
+				<section>
+					<h2>有兩種格式</h2>
+					<h3>.sass 與 .scss<i class="fa fa-check fragment"></i></h3>
+					<img src="./images/sass.png" alt="">
+					<img src="./images/scss.png" alt="">
+				</section>
+				<section>
+					<h2>官網介紹的特點</h2>
 					<ul class="lstn">
-						<li class="more_space">&lt;script src="/jquery.js">&lt;/script&gt; </li>
-						<li class="more_space">&lt;script src="/jquery.validate.min.js"&gt;&lt;/script&gt;</li>
-						<li class="more_space">&lt;-- 非必要 --&gt;</li>
-						<li class="more_space">&lt;script src="/jquery.additional_methods.js"&gt;&lt;/script&gt;</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>變數 Variables</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>巢狀 Nesting</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>多檔案 Partials</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>載入 Import</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>混搭 Mixins</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>延伸/繼承 Extend/Inheritance</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>計算 Operators</li>
 					</ul>
 				</section>
 				<section>
-					<h2>使用方式</h2>
-					<ul>
-						<li class="more_space">$("#form_id").validate();</li>
-						<li class="more_space fragment">使用rules定義欄位規則</li>
-						<li class="more_space fragment">使用messages客制錯誤訊息</li>
-						<li class="more_space fragment">可設定debug模式，無需送出表單</li>
-						<li class="more_space fragment">有callback可在驗證後處理特殊功能</li>
-						<li class="more_space fragment">使用errorElement, errorClass, validClass, errorContainer與wrapper設定錯誤樣式，用showErrors設定主要訊息</li>
+					<h2>個人的使用心得 - 管理面</h2>
+					<h3><i class="fa fa-thumbs-o-up"></i> 透過Sass讓CSS<span class="red">管理</span>變得超級方便</h3>
+					<ul class="lstn">
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>使用 "//" 做為註解，讓註解更簡單</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>透過巢狀的實作使CSS的作用域(Scope)更清楚</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>使用變數減輕管理CSS的痛苦</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>透過import與partials讓CSS能夠分門別類</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>使用延伸(extend)讓CSS碼達到瘦身效果</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>自做mixin讓CSS碼變得可攜與重複使用</li>
 					</ul>
 				</section>
 				<section>
-					<h2>使用方式</h2>
-					<img src="./images/rules.png" alt="">
-					<div>在送出Submit前會檢查，如果有錯誤便會停止送出表單</div>
-				</section>
-				<section>
-					<h2>驗證規則</h2>
-					<ul>
-						<li class="more_space">required: 是否必填</li>
-						<li class="more_space fragment">url: 驗證網址格式正確性</li>
-						<li class="more_space fragment">number: 是否數字</li>
-						<li class="more_space fragment">email: 是否Email格式</li>
-						<li class="more_space fragment">minlegnth: 最短長度</li>
-						<li class="more_space fragment">maxlength: 最長長度</li>
-						<li class="more_space fragment">rangelength: 長度範圍</li>
-						<li class="more_space fragment">remote: 使用ajax驗證遠端</li>
-						<li class="more_space fragment">equalTo: 比較兩欄位</li>
-						<li class="more_space fragment">require_from_group method： 多選一必填</li>
-						<li class="more_space fragment">外掛additional-methods驗證US電話,郵遞區號</li>
+					<h2>個人的使用心得 - 擴充與強化面</h2>
+					<h3><i class="fa fa-thumbs-o-up"></i> 大幅<span class="red">擴充並強化</span>既有的CSS能力</h3>
+					<ul class="lstn">
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>使用mixin功能吸收高手的內力 <span style="color:blue" class="fragment">Level up!!!</span></li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>計算功能與內建函式強化CSS效果</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>以程式邏輯的方式延伸CSS，以directive方式</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>搭配Compass = 拿到CSS的葵花寶典 <span class="fragment rotate red">太誇張了!!!</span></li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>搭配Susy達到語義化的RWD不是夢想 <span style="color:blue;"><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i></span></li>
 					</ul>
 				</section>
 				<section>
-					<h2>遠端驗證</h2>
-					<ul>
-						<li class="more_space">輸入資料是否存在</li>
-						<li class="more_space fragment">需要驗證使用者權限</li>
-						<li class="more_space fragment">需要比對資料庫內容</li>
+					<h3>透過巢狀的實作使CSS的作用域(Scope)更清楚</h3>
+					<img src="./images/nest.gif" alt="">
+				</section>
+				<section>
+					<h2>巢狀</h2>
+					<h3>更多範例</h3>
+					<img src="./images/nest2.png" alt="">
+					<p>
+						<div>使用&代表上一層標籤</div>
+						<div>注意text的使用方式</div>
+						<div class="red">巢狀不建議超過4層!</div>
+					</p>
+				</section>
+				<section>
+					<h2>變數 Variables</h2>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>使用$符號作為變數，例如: $base_color: #C$0000 </li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>型別有文字, 數字, 布林值, 單位, 顏色, 多組文字與空值</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>可以同時應用在"鍵"與"值"上</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>需要注意命名的方式</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>透過partial可在多檔案中使用</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>配合mixin發揮強大作用</li>
 					</ul>
 				</section>
 				<section>
-					<h2>錯誤訊息 - 預設錯誤訊息</h2>
-					<!-- 預設錯誤訊息 -->
-					<img src="./images/default_msg.png" alt="">
-					<h4>直接在原始檔內修改</h4>
+					<h2>變數 Variables</h2>
+					<img src="./images/variable.png" alt="">
+					<p>老問題 <span class="red">命名很重要!!!</span></p>
 				</section>
 				<section>
-					<h2>錯誤訊息 - 客制錯誤訊息</h2>
-					<img src="./images/custom_msg.png" alt="">
+					<h2>混搭 Mixins</h2>
+					<h4>大家應該都這麼幹過...</h4>
+					<img src="./images/mixin1.png" alt="" class="fragment">
+					<p class="fragment">不麻煩，靠剪貼就解決了啦XDDD</p>
 				</section>
 				<section>
-					<h2>事件處理</h2>
-					<h4>啟動與取消特定事件</h4>
-					<img src="./images/onkeyup.png" alt="" style="width:450px;" class="fragment">
-					<h4 class="fragment">另外支持onkeyup, onfocusout, onclick, onsubmit等事件</h4>
+					<h2>相信我，靠剪貼很快就失控了</h2>
+					<img src="./images/baby.jpg" alt="">
 				</section>
 				<section>
-					<h2>Callback</h2>
-					<ul>
-						<li class="more_space">submitHandler: 按下submit時客制處理特定事件</li>
-						<li class="more_space">invalidHandler: 錯誤發生時的處理機制</li>
-						<li class="more_space">success: 單欄位驗證成功時的處理</li>
-						<li class="more_space">highlight: 單欄位驗證錯誤時的處置，e.g加入class</li>
-						<li class="more_space">unhighlight: highlight的反向操作</li>
-						<li class="more_space">showErrors: 整體表單任一欄位發生事件時顯示</li>
-						<li class="more_space">errorPlacement: 錯誤訊息擺放位置</li>
+					<h2>混搭 Mixins</h2>
+					<h4>將重複使用的部份獨立成為區塊</h4>
+					<img src="./images/mixin2.png" alt="">
+					<img src="./images/mixin1.png" alt="">
+					<p>使用關鍵字<span class="red"> @mixin</span> 與 <span class="red">@include</span></p>
+				</section>
+				<section>
+					<h2>But...如果你熟CSS，你會...</h2>
+					<img src="./images/mixin3.png" alt="">
+					<p>效率一定比重複使用好！那我用 <span class="red">Mixin</span> 幹嘛?</p>
+				</section>
+				<section>
+					<h2>重複的程式碼可用Mixin處理</h2>
+					<img src="./images/mixin4.png" alt="">
+					<p class="fragment">但是還是有問題。每個邊框都只能5px...</p>
+					<h3 class="fragment" style="color:red;">如果能帶入變數呢?</h3>
+				</section>
+				<section>
+					<h2>將Mixin帶入變數</h2>
+					<img src="./images/mixin5.png" alt="">
+					<p class="fragment">好像開始有點意思了...</p>
+				</section>
+				<section>
+					<h2>Mixin使用預設值</h2>
+					<img src="./images/mixin6.png" alt="">
+					<p><i class="fa fa-thumbs-o-up"></i> 帶入預設值可以統一風格</p>
+					<p><i class="fa fa-thumbs-o-up"></i> 帶入預設值可避免漏填的錯誤</p>
+				</section>
+				<section>
+					<h2>變數可以用在"鍵"與"值"上</h2>
+					<img src="./images/mixin7.png" alt="">
+					<p class="fragment">還有還有...</p>
+					<ul class="lstn">
+						<li class="fragment"><i class="fa fa-thumbs-o-up"></i> 把自己常用的CSS碼轉成mixin，加快開發速度</li>
+						<li class="fragment"><i class="fa fa-thumbs-o-up"></i> 將常用的mixin獨立成一個檔案，跟著不同專案走</li>
+						<li class="fragment"><i class="fa fa-thumbs-o-up"></i> 開始上網找高手做好的mixin吧...</li>
 					</ul>
 				</section>
 				<section>
-					<h2>客制驗證</h2>
-					<ul>
-						<li class="more_space">可參考additional-methods裡面的寫法</li>
-						<li class="more_space fragment">特殊輸入值的處理，例如郵遞區號，統編身份證等計算</li>
-						<li class="more_space fragment">搭配正規表示式Regexp做驗證</li>
-						<li class="more_space fragment">返回true才算驗證過，反之跳出錯誤</li>
-					</ul>
-					<img src="./images/custom_method.png" alt="" class="fragment">
-				</section>
-				<section>
-					<h2>錯誤樣式</h2>
-					<ul>
-						<li class="more_space">errorLabelContainer: </li>
-						<li class="more_space">errorElement: 錯誤訊息的顯示標籤</li>
-						<li class="more_space">errorClass: 錯誤訊息的class</li>
-						<li class="more_space">validClass: 驗證過時的class</li>
-						<li class="more_space">errorContainer: 錯誤訊息包住在某特定selector中</li>
-						<li class="more_space">wrapper: 包住errorElement的標籤</li>
+					<h2>Partials與Import</h2>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>使用底線_做為partial檔案的開頭</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>使用@import載入檔案</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>partial檔案單純引入不會被compile</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>避免IE8限制CSS選擇器數量(4095)的問題</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i><span class="red">IE MUST DIE!!!</span></li>
 					</ul>
 				</section>
 				<section>
-					<h2>注意事項</h2>
-					<ul>
-						<li class="more_space red">*注意: 欄位的"name"屬性是必要的</li>
-						<li class="more_space">避免重複id</li>
-						<li class="more_space">更多驗證: https://github.com/jzaefferer/jquery-validation/tree/master/src/additional</li>
+					<h2>Partials與Import</h2>
+					<h4>重點來了...</h4>
+					<img src="./images/partials.png" alt="" style="width:70%;">
+				</section>
+				<section>
+					<h2>Partials與Import</h2>
+					<img src="./images/import.png" alt="">
+					<p><span class="red">載入的順序會影響...</span></p>
+					<p class="fragment">透過partials讓Sass就是這麼好管理 <span style="color:blue;"><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i></span></p>
+				</section>
+				<section>
+					<h2>延伸 Extend</h2>
+					<h4>還記得這張圖嗎?</h4>
+					<img src="./images/mixin3.png" alt="">
+					<p class="fragment">好像是...呃...忘記了XXDD...</p>
+				</section>
+				<section>
+					<h2>Extend就是拿來延伸區塊的</h2>
+					<img src="./images/extend1.png" alt="">
+					<img src="./images/mixin3.png" alt="">
+					<ul class="lstn">
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>產出的css能夠節省檔案size</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>Sass部份分拆text-box1, text-box2讓程式碼更清楚</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>好懂的給人看，難懂的給機器看 <i class="fa fa-thumbs-o-up"></i></li>
 					</ul>
 				</section>
 				<section>
-					<h2>其他form表驗證工具</h2>
-					<ul>
-						<li class="more_space">Happy.js</li>
-						<li class="more_space">Parsleyjs</li>
-						<li class="more_space">Jquery Form Validator</li>
-						<li class="more_space">很多...</li>
+					<h2>注意Extend的巢狀陷阱</h2>
+					<img src="./images/extend2.png" alt="" style="width:35%">
+					<p class="fragment red">好像沒有Z > B?</p>
+				</section>
+				<section>
+					<h2>用%符號 + 名稱處理Extend巢狀陷阱</h2>
+					<img src="./images/extend3.png" alt="">
+					<img src="./images/mixin3.png" alt="">
+					<p>避免重複的CSS碼</p>
+				</section>
+				<section>
+					<h2>計算 Operators</h2>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>加, 減, 乘, 除, 商統統都有</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>可搭配函數使用</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>不同單位不可計算</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>顏色可以計算 <span style="color:blue;"><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i></span></li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>需要計算機?使用sass互動模式(輸入sass -i)<span style="color:blue;"><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i></span></li>
 					</ul>
 				</section>
 				<section>
-					<h3>囧rz 不會寫javascript，能夠做表單驗證嗎?</h3>
-					<img src="./images/frustrated.jpg" alt="">
+					<h2>數字計算 Operators</h2>
+					<img src="./images/operator1.png" alt="">
 				</section>
 				<section>
-					<h2>使用HTML5的input新屬性</h2>
-					<ul>
-						<li class="more_space">&lt;input type="<span class="red">email</span>" name="email"&gt;</li>
-						<li class="more_space">&lt;input type="<span class="red">number</span>" name="quantity"&gt;</li>
-						<li class="more_space">&lt;input type="<span class="red">search</span>" name="googlesearch"&gt;</li>
-						<li class="more_space">&lt;input type="<span class="red">url</span>" name="homepage"&gt;</li>
-						<li class="more_space">&lt;input type="<span class="red">time</span>" name="enrolltime"&gt;</li>
-						<li class="more_space fragment">range, month, tel, color, week, datetime...</li>
-						<li class="more_space fragment">required, step, min, max與pattern屬性</li>
+					<h2>數字計算的函數</h2>
+					<p>Sass內建好用的函數，提高數學計算的可能性</p>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>round($number) => 四捨五入</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>ceil($number) => 無條件進位</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>floor($number) => 無條件去小數位</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>abs($number) => 絕對值</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>percentage($number) => 數值百分位化</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>min($collection) => 一堆值中最小的</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>max($collection) => 一堆值中最大的</li>
 					</ul>
 				</section>
 				<section>
-					<h2>顯示方式 以Chrome為例</h2>
-					<img src="./images/html5inputs.png" alt="" style="width:400px;">
+					<h2>數字計算函數範例</h2>
+					<img src="./images/operator6.png" alt="">
+					<p>可使用sass的互動模式熟悉使用方法</p>
 				</section>
 				<section>
-					<h2>瀏覽器支援度</h2>
-					<h4><a href="http://caniuse.com/">請多利用Can I use網站</a></h4>
-					<img src="./images/caniuse.png" alt="">
+					<h2>文字組合 Operators</h2>
+					<img src="./images/operator2.png" alt="">
+					<p class="mt20 fragment">應該沒有人會這麼做吧?</p>
+				</section>
+				<section>
+					<h2>顏色計算 Operators</h2>
+					<img src="./images/operator5.png" alt="">
+					<img src="./images/operator4.png" alt="">
+				</section>
+				<section>
+					<h2>顏色函數範例</h2>
+					<img src="./images/operator7.png" alt="">
+				</section>
+				<section>
+					<h2>顏色計算以$color: #333333為例</h2>
+					<table class="w100p table1">
+						<tr>
+							<td>darken($color, 10%) </td>
+							<td style="background: #333333;"></td>
+							<td style="background: #1a1a1a;" class="fragment"></td>
+						</tr>
+						<tr>
+							<td>lighten($color, 20%) </td>
+							<td style="background: #333333;"></td>
+							<td style="background: #666666;" class="fragment"></td>
+						</tr>
+						<tr>
+							<td>saturate($color, 30%) </td>
+							<td style="background: #333333;"></td>
+							<td style="background: #422424;" class="fragment"></td>
+						</tr>
+						<tr>
+							<td>desaturate(#678ad8, 40%) </td>
+							<td style="background: #678ad8;"></td>
+							<td style="background: #8d99b2;" class="fragment"></td>
+						</tr>
+						<tr>
+							<td>invert($color) </td>
+							<td style="background: #333333;"></td>
+							<td style="background: #cccccc;" class="fragment"></td>
+						</tr>
+						<tr>
+							<td>grayscale(#ff0000) </td>
+							<td style="background: #ff0000;"></td>
+							<td style="background: #808080;" class="fragment"></td>
+						</tr>
+						<tr>
+							<td>complement(#ffff00) </td>
+							<td style="background: #ffff00;"></td>
+							<td style="background: #0000ff;" class="fragment"></td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>邏輯指示 Directive</h2>
+					<p class="fragment">最後一個了, YES!</p>
+					<ul class="lstn fragment">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>@function</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>@if...@else...@return</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>@each</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>@for 與 @while</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>比較符號:&nbsp;&nbsp;==&nbsp;&nbsp;>=&nbsp;&nbsp;<=&nbsp;&nbsp;!=...</li>
+					</ul>
+					<p class="fragment">我為什麼要在CSS檔案中寫程式?</p>
+				</section>
+				<section>
+					<h3>如果我能夠在CSS裡寫程式，我可以...</h3>
+					<ul class="lstn">
+						<li class="more_space fragment"><i class="fa fa-thumbs-o-up"></i> 以變數作為開關</li>
+						<li class="more_space fragment"><i class="fa fa-thumbs-o-up"></i> 將計算行為公式化</li>
+						<li class="more_space fragment"><i class="fa fa-thumbs-o-up"></i> 使用迴圈節省工作</li>
+						<li class="more_space fragment"><i class="fa fa-thumbs-o-up"></i> 強化mixin的使用</li>
+					</ul>
+					<p class="fragment">最重要還是要回歸初衷 - 好管理</p>
+				</section>
+				<section>
+					<h2>以變數作為開關</h2>
+					<img src="./images/function1.png" alt="">
+					<p class="fragment">把可能會用的功能先做好，等客戶要求時再打開XXDD <span style="color:blue;"><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i></span></p>
+				</section>
+				<section>
+					<h2>將計算行為公式化</h2>
+					<img src="./images/function4.png" alt="">
+					<p class="fragment">減少腦筋打結與手殘打錯的機會 <span style="color:blue;"><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i></span></p>
+				</section>
+				<section>
+					<h2>使用迴圈節省工作</h2>
+					<img src="./images/function2.png" alt="">
+					<img src="./images/function3.png" alt="">
+					<p class="fragment">這樣更好管理 <span style="color:blue;"><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i></span></p>
+				</section>
+				<section>
+					<h2>Directive讓mixin更強大</h2>
+					<img src="./images/function5.png" alt="" class="">
+					<p class="fragment">是不是該將程式的觀念帶入管理CSS? <span class="red fragment">早該這麼做了!!!</span></p>
+				</section>
+				<section>
+					<h2>是不是該談談.sass了?</h2>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>還記得Sass有兩種模式嗎?</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>將程式邏輯放進CSS中很酷，但是很亂</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>進階到Sass才能有效管理</li>
+						<li class="more_space fragment"><i class="fa fa-arrow-circle-o-right"></i>還是老話一句。好管理才是重點</li>
+					</ul>
+				</section>
+				<section>
+					<h2>finish...講完了^^</h2>
+					<img src="./images/fireworks.jpg" alt="" class="fragment">
+					<h1 class="fragment">Wait...還有還有~</h1>
+				</section>
+				<section>
+					<h2>Compass</h2>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>大量整理好的Mixin包，例如: CSS3的mixin</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>提供超好用function，例如: image-width()</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>使用CSS Sprite減少request次數</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>監控Sass檔案變化，直接轉成CSS</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>結合高手寫好的工具包，例如: sassy buttons</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Compass</h2>
+					<img src="./images/compass1.png" alt="">
+				</section>
+				<section>
+					<h2>Compass</h2>
+					<img src="./images/compass2.png" alt="">
+				</section>
+				<section>
+					<h2>Compass</h2>
+					<img src="./images/compass3.png" alt="">
+				</section>
+				<section>
+					<h2>Compass</h2>
+					<img src="./images/compass4.png" alt="">
+				</section>
+				<section>
+					<h2>Susy</h2>
+					<ul class="lstn">
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>讓你寫出屬於自己定義的RWD框架</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>寫出純語義的HTML架構不是夢</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>靈活的grid系統，讓你的layout與衆不同</li>
+						<li class="more_space"><i class="fa fa-arrow-circle-o-right"></i>用SUSY讓你覺得很潮</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Bootstrap的問題</h2>
+					<img src="./images/susy1.png" alt="" class="">
+				</section>
+				<section>
+					<h2>Susy的語義形式</h2>
+					<img src="./images/susy2.png" alt="" class="">
+				</section>
+				<section>
+					<h2><i class="fa fa-bullhorn"></i> 工商服務</h2>
+					<h3>前端開發課程 - Sass實戰教學 (台中場)</h3>
+					<p>講師: 廖洧杰 / 王志誠</p>
+					<p>時間: (7/5 與 7/12 9:00 am~17:00 pm)</p>
+					<p>地點: 北訊電腦 / 台中市中區中山路33號</p>
+					<p>報名網址: http://myerstone.kktix.cc/events/6d0c37e2-7aa43c</p>
 				</section>
 				<!-- main end -->
 				<section>
 					<h2>參考資料</h2>
 					<ul>
-						<li class="more_space"><a href="http://caniuse.com/">請多利用Can I use網站</a></li>
-						<li class="more_space"><a href="http://www.dotblogs.com.tw/wadehuang36/archive/2010/08/22/17353.aspx?fid=56353">jQuery plugin Validation的7個Callback介紹</a></li>
-						<li class="more_space"><a href="http://jqueryvalidation.org/">jQuery Validation Plugin</a></li>
-						<li class="more_space"><a href="http://stackoverflow.com/questions/1863448/jquery-validation-on-success">jQuery Validation on Success</a></li>
-						<li class="more_space"><a href="http://inspire.twgg.org/programming/jquery/item/134-jquery-validate-detailed-instructions.html">jQuery Validate 詳細使用說明</a></li>
-						<li class="more_space"><a href="http://www.dotblogs.com.tw/marcus116/archive/2012/03/10/70637.aspx">[jQuery] jQuery.Vaildation 驗證元件</a></li>
-						<li class="more_space"><a href="http://www.w3schools.com/html/html5_form_input_types.asp">HTML5 Input Types</a></li>
-						<li class="more_space"><a href="http://www.w3schools.com/html/html5_form_attributes.asp">HTML5 New Form Attributes</a></li>
+						<li class="more_space"><a href="http://css2sass.heroku.com/">Css2Sass</a></li>
+						<li class="more_space"><a href="http://sass-lang.com/guide/">Sass官方說明</a></li>
+						<li class="more_space"><a href="http://compass-style.org/">Compass官方說明</a></li>
+						<li class="more_space"><a href="http://susy.oddbird.net/">Susy官方說明</a></li>
+						<li class="more_space"><a href="http://lynda.com/">CSS with LESS and Sass</a></li>
+						<li class="more_space"><a href="https://www.codeschool.com/courses/assembling-sass">Sass Tutorial - Code School</a></li>
+						<li class="more_space"><a href="http://mashable.com/2013/06/11/sass-compass-tools/">25 Essential Sass and Compass Tools</a></li>
 					</ul>
 				</section>
 				<section>

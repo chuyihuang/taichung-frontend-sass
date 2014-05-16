@@ -1,6 +1,42 @@
 body {
   background: #3B3D44;
-  background-image: url("../images/wild_oliva.png");
+  background-image: url("../images/old_mathematics.png");
+}
+
+.w100p {
+  width: 100%;
+}
+
+.table1 {
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+.table1 td:nth-child(1) {
+  width: 50%;
+  text-align: right !important;
+}
+
+.table1 td:nth-child(2) {
+  width: 25%;
+}
+
+.table td:nth-child(3) {
+  width: 25%;
+}
+
+.table2 {
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+.table2 td {
+  width: 30% !important;
+}
+
+
+.mt20 {
+  margin-top: 20px !important;
 }
 
 .reveal i{
@@ -14,6 +50,10 @@ body {
 .more_space2 {
   letter-spacing: 0.2em;
   height: 40px;
+}
+
+.letter {
+  letter-spacing: 0.05em;
 }
 
 .letter_2 {
